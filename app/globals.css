@@ -1,26 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Black+Ops+One&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─── BRAND COLORS ───
+   Dark racing theme — Red, White, Black only.
+   - Black (#000000): deepest background
+   - Surface (#0D0D0D): card/section backgrounds
+   - Accent (#FF1E1E): neon red, buttons, highlights
+   - White text at 90% / 60% / 30% opacity
+*/
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #000000;
+  --color-surface: #0D0D0D;
+  --color-carbon: #111111;
+  --color-accent: #FF1E1E;
+  --color-accent-dark: #CC1818;
+  --color-foreground: #FFFFFF;
+  --color-chrome: #94A3B8;
+
+  --font-heading: 'Rajdhani', 'Bebas Neue', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', 'Rajdhani', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background: rgba(255, 30, 30, 0.2);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: rgba(255,30,30,0.5); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,30,30,0.7); }
+
+/* ─── GLASS ─── */
+.glass {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-strong {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 30, 30, 0.08);
+}
+
+/* ─── CARBON FIBER ─── */
+.bg-carbon {
+  background-color: #0D0D0D;
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.02) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.02) 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* ─── ASPHALT ─── */
+.bg-asphalt {
+  background-color: #0A0A0A;
+}
+
+/* ─── SECTION DIVIDER — Subtle Lane Marking ─── */
+.section-divider {
+  height: 0;
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,30,30,0.08) 0px,
+    rgba(255,30,30,0.08) 15px,
+    transparent 15px,
+    transparent 25px
+  );
+}
+
+/* ─── CHECKERED FLAG ─── */
+.bg-checkered {
+  background-image:
+    linear-gradient(45deg, #1A1A1A 25%, transparent 25%),
+    linear-gradient(-45deg, #1A1A1A 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #1A1A1A 75%),
+    linear-gradient(-45deg, transparent 75%, #1A1A1A 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* ─── GRID BACKGROUND ─── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 30, 30, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 30, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── NEON GLOW ─── */
+.neon-red {
+  box-shadow: 0 0 10px rgba(255, 30, 30, 0.3), 0 0 20px rgba(255, 30, 30, 0.15), 0 0 40px rgba(255, 30, 30, 0.05);
+}
+
+/* ─── RACING STRIPE ─── */
+.racing-stripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 30, 30, 0.1), transparent);
+  animation: stripe-slide 4s ease-in-out infinite;
+}
+
+@keyframes stripe-slide {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ─── PIT STOP CARD ─── */
+.pit-stop-card {
+  background: linear-gradient(135deg, rgba(13,13,13,0.95), rgba(26,26,26,0.95));
+  border: 1px solid rgba(255, 30, 30, 0.2);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pit-stop-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FF1E1E;
+}
+
+.pit-stop-card:hover {
+  border-color: rgba(255, 30, 30, 0.4);
+  box-shadow: 0 0 30px rgba(255, 30, 30, 0.1);
+}
+
+/* ─── RACE TICKET ─── */
+.race-ticket {
+  background: linear-gradient(180deg, #0D0D0D, #111111);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.race-ticket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FF1E1E;
+}
+
+/* ─── TRACK LANE ─── */
+.track-lane {
+  position: relative;
+}
+
+.track-lane::before,
+.track-lane::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.track-lane::before {
+  top: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,30,30,0.3) 0px,
+    rgba(255,30,30,0.3) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+.track-lane::after {
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,30,30,0.3) 0px,
+    rgba(255,30,30,0.3) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+/* ─── CONTAINER ─── */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ─── FINISH LINE ─── */
+.finish-line {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  height: 4px;
+}
+
+/* ─── HERO DISPLAY TITLE ─── */
+.hero-display {
+  font-family: 'Black Ops One', 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+  text-shadow: 0 4px 20px rgba(255,30,30,0.15);
+}
+
+/* ─── RED INTENSITY SCALE ───
+   Same hue, different perceived weight.
+   Use brighter for primary, muted for secondary.
+*/
+.accent-100 { color: #FF1E1E; }            /* full — h1, CTAs */
+.accent-80  { color: rgba(255,30,30,0.8); } /* section headings */
+.accent-60  { color: rgba(255,30,30,0.6); } /* card titles, labels */
+.accent-40  { color: rgba(255,30,30,0.4); } /* descriptions */
+.accent-20  { color: rgba(255,30,30,0.2); } /* decorative, faint */
+
+.bg-accent-100 { background-color: #FF1E1E; }
+.bg-accent-80  { background-color: rgba(255,30,30,0.8); }
+.bg-accent-60  { background-color: rgba(255,30,30,0.6); }
+.bg-accent-40  { background-color: rgba(255,30,30,0.4); }
+.bg-accent-20  { background-color: rgba(255,30,30,0.2); }
+.bg-accent-10  { background-color: rgba(255,30,30,0.1); }
+
+/* ─── CHROME (4th color) — subtitles, secondary labels ─── */
+.chrome      { color: #94A3B8; }
+.chrome-80   { color: rgba(148,163,184,0.8); }
+.chrome-60   { color: rgba(148,163,184,0.6); }
+.chrome-40   { color: rgba(148,163,184,0.4); }
+.chrome-20   { color: rgba(148,163,184,0.2); }
+
+/* ─── FLOATING WHATSAPP ─── */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+}
+
+.wa-float {
+  animation: wa-pulse 2.5s ease-in-out infinite;
 }

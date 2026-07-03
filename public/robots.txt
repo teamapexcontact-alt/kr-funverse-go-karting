@@ -1,0 +1,9 @@
+# public/robots.txt — SEARCH ENGINE CRAWLER INSTRUCTIONS
+# PURPOSE: Tells Google and other search engines which pages to crawl/index
+# Allows all crawlers to access all pages (no blocking)
+# Sitemap location tells Google where to find the full page list
+
+User-agent: *
+Allow: /
+
+Sitemap: https://krfunverse.com/sitemap.xml
