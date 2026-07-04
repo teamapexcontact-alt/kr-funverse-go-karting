@@ -23,12 +23,12 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* === REAR WING ASSEMBLY === */}
       <g>
         {/* Main wing plate */}
-        <rect x="8" y="28" width="6" height="44" rx="1.5" fill="#0D0D0D" />
-        <rect x="6" y="22" width="10" height="8" rx="2" fill="#FF1E1E" />
+        <rect x="8" y="28" width="6" height="44" rx="1.5" fill="#0A0A0B" />
+        <rect x="6" y="22" width="10" height="8" rx="2" fill="#D72638" />
         <rect x="7" y="20" width="8" height="3" rx="1" fill="#fff" opacity="0.6" />
         {/* Wing endplates */}
-        <rect x="4" y="24" width="2" height="6" rx="0.5" fill="#FF1E1E" opacity="0.8" />
-        <rect x="16" y="24" width="2" height="6" rx="0.5" fill="#FF1E1E" opacity="0.8" />
+        <rect x="4" y="24" width="2" height="6" rx="0.5" fill="#D72638" opacity="0.8" />
+        <rect x="16" y="24" width="2" height="6" rx="0.5" fill="#D72638" opacity="0.8" />
       </g>
 
       {/* === ENGINE COVER === */}
@@ -43,7 +43,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* Heat glow */}
       <motion.rect
         x="30" y="70" width="20" height="3" rx="1"
-        fill="#FF1E1E"
+        fill="#D72638"
         animate={{ opacity: [0.1, 0.3, 0.1] }}
         transition={{ duration: 0.3, repeat: Infinity }}
       />
@@ -51,7 +51,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* === MAIN MONOCOQUE BODY === */}
       <path
         d="M40 40 L185 38 Q198 38 202 48 L206 62 Q208 72 202 76 L40 78 Q32 78 30 72 L26 52 Q24 44 30 40 Z"
-        fill="#FF1E1E"
+        fill="#D72638"
       />
       {/* Body highlight */}
       <path
@@ -71,7 +71,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* === COCKPIT === */}
       <path
         d="M70 36 L128 36 Q134 36 136 42 L138 54 Q138 58 134 60 L70 60 Q66 60 64 56 L60 44 Q58 38 64 36 Z"
-        fill="#0D0D0D"
+        fill="#0A0A0B"
       />
       {/* Cockpit padding */}
       <path
@@ -100,7 +100,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* === DRIVER HELMET === */}
       <g>
         {/* Helmet base */}
-        <ellipse cx="98" cy="44" rx="14" ry="12" fill="#FF1E1E" />
+        <ellipse cx="98" cy="44" rx="14" ry="12" fill="#D72638" />
         <ellipse cx="98" cy="43" rx="13" ry="11" fill="#CC1515" />
         {/* Visor */}
         <path
@@ -125,10 +125,10 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       <g>
         {/* Main wing */}
         <rect x="198" y="34" width="24" height="48" rx="4" fill="#1A1A1A" />
-        <rect x="204" y="28" width="12" height="6" rx="2" fill="#FF1E1E" />
+        <rect x="204" y="28" width="12" height="6" rx="2" fill="#D72638" />
         <rect x="206" y="26" width="8" height="3" rx="1" fill="#fff" opacity="0.5" />
         {/* Endplates */}
-        <rect x="218" y="36" width="4" height="44" rx="1.5" fill="#FF1E1E" opacity="0.9" />
+        <rect x="218" y="36" width="4" height="44" rx="1.5" fill="#D72638" opacity="0.9" />
         <rect x="200" y="36" width="2" height="44" rx="1" fill="#111" />
         {/* Turning vanes */}
         <rect x="220" y="42" width="2" height="4" fill="#fff" opacity="0.3" />
@@ -144,7 +144,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
       {/* Nose tip */}
       <path
         d="M200 46 L210 47 L211 54 L210 60 L200 61 Z"
-        fill="#FF1E1E"
+        fill="#D72638"
         opacity="0.8"
       />
 
@@ -169,7 +169,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
         <motion.ellipse
           cx="16" cy="86"
           rx="6" ry="4"
-          fill="#FF1E1E"
+          fill="#D72638"
           animate={{ opacity: [0.2, 0.6, 0.2], rx: [6, 9, 6] }}
           transition={{ duration: 0.12, repeat: Infinity }}
         />
@@ -220,14 +220,14 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
 
       {/* === BRAKE LIGHTS === */}
       <motion.ellipse
-        cx="28" cy="50" rx="2" ry="3" fill="#FF1E1E"
+        cx="28" cy="50" rx="2" ry="3" fill="#D72638"
         animate={{ opacity: [0.2, 0.8, 0.2] }}
         transition={{ duration: 0.5, repeat: Infinity }}
       />
 
       {/* === REAR WHEELS === */}
       <g transform={`translate(34, 96) rotate(${wheelRotate})`}>
-        <circle cx="0" cy="0" r="16" fill="#0D0D0D" />
+        <circle cx="0" cy="0" r="16" fill="#0A0A0B" />
         <circle cx="0" cy="0" r="14" fill="#1A1A1A" />
         <circle cx="0" cy="0" r="12" fill="#222" />
         {/* Tyre tread */}
@@ -243,12 +243,12 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
         <circle cx="0" cy="0" r="6" fill="#333" />
         <circle cx="0" cy="0" r="4" fill="#444" />
         {/* Center hub */}
-        <circle cx="0" cy="0" r="2" fill="#FF1E1E" />
+        <circle cx="0" cy="0" r="2" fill="#D72638" />
       </g>
 
       {/* === FRONT WHEELS === */}
       <g transform={`translate(205, 96) rotate(${wheelRotate})`}>
-        <circle cx="0" cy="0" r="14" fill="#0D0D0D" />
+        <circle cx="0" cy="0" r="14" fill="#0A0A0B" />
         <circle cx="0" cy="0" r="12" fill="#1A1A1A" />
         <circle cx="0" cy="0" r="10" fill="#222" />
         <line x1="0" y1="-14" x2="0" y2="-10" stroke="#333" strokeWidth="2" />
@@ -261,7 +261,7 @@ export default function GoKartVehicle({ className = "", speed = 0 }: GoKartVehic
         <line x1="7" y1="-7" x2="10" y2="-10" stroke="#333" strokeWidth="1.5" />
         <circle cx="0" cy="0" r="5" fill="#333" />
         <circle cx="0" cy="0" r="3" fill="#444" />
-        <circle cx="0" cy="0" r="1.5" fill="#FF1E1E" />
+        <circle cx="0" cy="0" r="1.5" fill="#D72638" />
       </g>
     </svg>
   );

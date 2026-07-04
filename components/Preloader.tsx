@@ -53,9 +53,9 @@ export default function Preloader() {
               <motion.circle cx="80" cy="80" r="70" fill="none" stroke="url(#gaugeGradient)" strokeWidth="8" strokeDasharray="330 110" strokeDashoffset={330 - (progress / 100) * 330} strokeLinecap="round" transform="rotate(-55 80 80)" />
               <defs>
                 <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FF1E1E" />
+                  <stop offset="0%" stopColor="#D72638" />
                   <stop offset="50%" stopColor="#fff" />
-                  <stop offset="100%" stopColor="#FF1E1E" />
+                  <stop offset="100%" stopColor="#D72638" />
                 </linearGradient>
               </defs>
               {[...Array(11)].map((_, i) => {

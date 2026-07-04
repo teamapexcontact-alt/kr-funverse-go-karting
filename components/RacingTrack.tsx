@@ -13,11 +13,11 @@ function GoKart({ speed }: { speed: number }) {
       {/* Rear wing support */}
       <rect x="8" y="1" width="8" height="1" rx="0.3" fill="#333" />
       {/* Rear wing */}
-      <rect x="4" y="0" width="16" height="3" rx="1" fill="#FF1E1E" />
+      <rect x="4" y="0" width="16" height="3" rx="1" fill="#D72638" />
       <rect x="6" y="3" width="12" height="1.5" rx="0.5" fill="#222" />
       {/* Wing endplates */}
-      <rect x="3" y="0" width="1.5" height="4" rx="0.3" fill="#FF1E1E" opacity="0.8" />
-      <rect x="19.5" y="0" width="1.5" height="4" rx="0.3" fill="#FF1E1E" opacity="0.8" />
+      <rect x="3" y="0" width="1.5" height="4" rx="0.3" fill="#D72638" opacity="0.8" />
+      <rect x="19.5" y="0" width="1.5" height="4" rx="0.3" fill="#D72638" opacity="0.8" />
 
       {/* Engine cover */}
       <rect x="7" y="4" width="10" height="3" rx="1" fill="#1a1a1a" />
@@ -25,14 +25,14 @@ function GoKart({ speed }: { speed: number }) {
       <rect x="8" y="5.5" width="8" height="0.5" fill="rgba(255,255,255,0.05)" />
 
       {/* Main body */}
-      <path d="M5 7 L19 7 Q21 7 21 9 L20 24 Q20 26 18 26 L6 26 Q4 26 4 24 L3 9 Q3 7 5 7 Z" fill="#FF1E1E" />
+      <path d="M5 7 L19 7 Q21 7 21 9 L20 24 Q20 26 18 26 L6 26 Q4 26 4 24 L3 9 Q3 7 5 7 Z" fill="#D72638" />
 
       {/* Body side detail */}
       <path d="M5.5 10 L18.5 10" stroke="rgba(255,255,255,0.08)" strokeWidth="0.4" />
       <path d="M5.5 18 L18.5 18" stroke="rgba(255,255,255,0.05)" strokeWidth="0.3" />
 
       {/* Sidepods */}
-      <rect x="4" y="14" width="16" height="5" rx="1.5" fill="#cc1818" />
+      <rect x="4" y="14" width="16" height="5" rx="1.5" fill="#B02030" />
       <rect x="4.5" y="14.5" width="15" height="1" fill="rgba(255,255,255,0.06)" />
 
       {/* Air intake */}
@@ -40,7 +40,7 @@ function GoKart({ speed }: { speed: number }) {
       <rect x="10" y="6.3" width="4" height="1.4" rx="0.5" fill="#0a0a0a" />
 
       {/* Cockpit */}
-      <path d="M7 9 L17 9 Q18 9 18 10 L17 15 Q17 16 16 16 L8 16 Q7 16 7 15 L6 10 Q6 9 7 9 Z" fill="#0D0D0D" />
+      <path d="M7 9 L17 9 Q18 9 18 10 L17 15 Q17 16 16 16 L8 16 Q7 16 7 15 L6 10 Q6 9 7 9 Z" fill="#0A0A0B" />
 
       {/* Steering wheel */}
       <circle cx="12" cy="11" r="2" fill="none" stroke="#444" strokeWidth="0.6" />
@@ -53,19 +53,19 @@ function GoKart({ speed }: { speed: number }) {
       <path d="M9.5 9.5 Q12 8.5 14.5 9.5" stroke="#1a1a1a" strokeWidth="1" fill="#222" opacity="0.8" />
       <path d="M9.8 9.7 Q12 8.8 14.2 9.7" stroke="#333" strokeWidth="0.4" fill="none" />
       {/* Helmet stripe */}
-      <path d="M12 7.5 L12 13" stroke="#FF1E1E" strokeWidth="0.6" />
-      <path d="M10.5 8 L13.5 8" stroke="#FF1E1E" strokeWidth="0.3" />
+      <path d="M12 7.5 L12 13" stroke="#D72638" strokeWidth="0.6" />
+      <path d="M10.5 8 L13.5 8" stroke="#D72638" strokeWidth="0.3" />
 
       {/* Front nose */}
-      <path d="M7 26 L17 26 L15 30 L9 30 Z" fill="#FF1E1E" />
-      <path d="M8 26.5 L16 26.5 L14.5 29.5 L9.5 29.5 Z" fill="#cc1818" />
+      <path d="M7 26 L17 26 L15 30 L9 30 Z" fill="#D72638" />
+      <path d="M8 26.5 L16 26.5 L14.5 29.5 L9.5 29.5 Z" fill="#B02030" />
 
       {/* Front wing */}
       <rect x="3" y="29" width="18" height="2.5" rx="0.8" fill="#222" />
-      <rect x="5" y="31.5" width="14" height="2" rx="0.5" fill="#FF1E1E" />
+      <rect x="5" y="31.5" width="14" height="2" rx="0.5" fill="#D72638" />
       {/* Front wing flaps */}
-      <rect x="3.5" y="29" width="1" height="4" fill="#FF1E1E" opacity="0.7" />
-      <rect x="19.5" y="29" width="1" height="4" fill="#FF1E1E" opacity="0.7" />
+      <rect x="3.5" y="29" width="1" height="4" fill="#D72638" opacity="0.7" />
+      <rect x="19.5" y="29" width="1" height="4" fill="#D72638" opacity="0.7" />
       <rect x="5" y="29.3" width="14" height="0.3" fill="rgba(255,255,255,0.1)" />
 
       {/* Rear wheels */}
@@ -96,7 +96,7 @@ function GoKart({ speed }: { speed: number }) {
       <motion.ellipse
         cx="4.75" cy="26"
         rx="1.5"
-        fill="#FF1E1E"
+        fill="#D72638"
         initial={{ ry: 1.5, opacity: 0.2 }}
         animate={{ opacity: [0.2, 0.6, 0.2], ry: [1.5, 2.5, 1.5] }}
         transition={{ duration: 0.12, repeat: Infinity }}
@@ -104,7 +104,7 @@ function GoKart({ speed }: { speed: number }) {
       <motion.ellipse
         cx="4.75" cy="26.5"
         rx="0.8"
-        fill="#FFaa00"
+        fill="#FFB800"
         initial={{ ry: 1, opacity: 0.3 }}
         animate={{ opacity: [0.3, 0.7, 0.3], ry: [1, 1.8, 1] }}
         transition={{ duration: 0.1, repeat: Infinity, delay: 0.05 }}
@@ -114,8 +114,8 @@ function GoKart({ speed }: { speed: number }) {
       <text x="12" y="20" textAnchor="middle" fill="white" fontSize="4" fontWeight="bold" fontFamily="Rajdhani" opacity="0.7">07</text>
 
       {/* Front headlights (small LED dots) */}
-      <circle cx="8" cy="29.5" r="0.5" fill="#FFaa00" opacity="0.6" />
-      <circle cx="16" cy="29.5" r="0.5" fill="#FFaa00" opacity="0.6" />
+      <circle cx="8" cy="29.5" r="0.5" fill="#FFB800" opacity="0.6" />
+      <circle cx="16" cy="29.5" r="0.5" fill="#FFB800" opacity="0.6" />
     </svg>
   );
 }
