@@ -1,13 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCheck, FaCrown, FaStar, FaBolt, FaGem, FaCouch, FaUtensils, FaTshirt, FaCamera } from "react-icons/fa";
+import { FaCheck, FaCrown, FaStar, FaBolt, FaCouch, FaUtensils, FaTshirt, FaCamera, FaIdBadge, FaTicketAlt, FaTrophy, FaImage } from "react-icons/fa";
 import Button from "./Button";
 import type { Package } from "@/data/packages";
 
 interface PricingCardProps {
   pkg: Package;
 }
+
+const iconMap: Record<string, React.ComponentType<{ className?: string; size?: number }>> = {
+  FaCouch, FaUtensils, FaTshirt, FaCamera, FaIdBadge, FaTicketAlt, FaTrophy, FaImage,
+};
 
 const tierConfig = {
   basic: {
@@ -36,17 +40,11 @@ const tierConfig = {
   },
 };
 
-const ultraPerks = [
-  { icon: FaCouch, label: "VIP Lounge" },
-  { icon: FaUtensils, label: "₹200 Meal" },
-  { icon: FaTshirt, label: "Free Merch" },
-  { icon: FaCamera, label: "Photo Booth" },
-];
-
 export default function PricingCard({ pkg }: PricingCardProps) {
   const cfg = tierConfig[pkg.tier];
   const isUltra = pkg.tier === "ultra";
   const isPro = pkg.tier === "pro";
+  const ultraPerks = (pkg as any).perks || [];
 
   return (
     <motion.article
@@ -55,13 +53,37 @@ export default function PricingCard({ pkg }: PricingCardProps) {
     >
       {/* Glassmorphism inset highlight */}
       <div className="absolute inset-0 rounded-2xl pointer-events-none" style={{ boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.06), inset 0 -1px 0 0 rgba(0,0,0,0.15)" }} />
+
+      {/* Ultra: Animated glowing border */}
+      {isUltra && (
+        <motion.div
+          className="absolute -inset-[1px] rounded-2xl pointer-events-none"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(232,54,46,0.3), transparent)",
+            backgroundSize: "200% 100%",
+          }}
+          animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        />
+      )}
+
       {/* Clipped decorative glows */}
       <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-      {isUltra && (
-        <>
-          <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent/15 rounded-full blur-2xl" />
-          <div className="absolute -bottom-12 -left-12 w-28 h-28 bg-accent/8 rounded-full blur-xl" />
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+        {isUltra && (
+          <>
+            <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent/15 rounded-full blur-2xl" />
+            <div className="absolute -bottom-12 -left-12 w-28 h-28 bg-accent/8 rounded-full blur-xl" />
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+            {/* Sparkle particles */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-accent/40 rounded-full"
+                style={{ top: `${15 + i * 14}%`, right: `${5 + (i % 3) * 8}%` }}
+                animate={{ opacity: [0, 0.8, 0], scale: [0.5, 1.2, 0.5] }}
+                transition={{ duration: 2, delay: i * 0.3, repeat: Infinity }}
+              />
+            ))}
           </>
         )}
         {isPro && (
@@ -74,16 +96,41 @@ export default function PricingCard({ pkg }: PricingCardProps) {
         <div className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold px-5 py-1.5 rounded-full tracking-wider uppercase shadow-lg z-10 ${
           isUltra ? "bg-accent text-white" : "bg-coral text-white"
         }`}>
-          {cfg.badge}
+          {isUltra && (
+            <motion.span
+              animate={{ opacity: [1, 0.6, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="inline-block"
+            >
+              ★{" "}{cfg.badge}{" "}★
+            </motion.span>
+          )}
+          {!isUltra && cfg.badge}
         </div>
+      )}
+
+      {/* Ultra: Champion's Experience label */}
+      {isUltra && (
+        <motion.div
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-3"
+        >
+          <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-accent/60" style={{ fontFamily: "var(--font-heading)" }}>
+            Champion&apos;s Experience
+          </span>
+        </motion.div>
       )}
 
       {/* Header */}
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-1">
           {isUltra && (
-            <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }}>
-              <FaCrown className="text-accent" size={18} />
+            <motion.div
+              animate={{ rotate: [0, -5, 5, 0], scale: [1, 1.15, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <FaCrown className="text-accent" size={20} />
             </motion.div>
           )}
           {isPro && <FaBolt className="text-accent" size={14} />}
@@ -96,24 +143,47 @@ export default function PricingCard({ pkg }: PricingCardProps) {
 
       {/* Price */}
       <div className="mb-5">
-        <span className={`font-black ${isUltra ? "text-6xl text-accent" : isPro ? "text-5xl text-white" : "text-4xl text-white/80"}`} style={{ fontFamily: "var(--font-heading)" }}>
-          ₹{pkg.price.toLocaleString("en-IN")}
-        </span>
-        <span className="text-white/25 text-sm ml-1">/ {pkg.duration}</span>
+        <div className="flex items-baseline gap-1">
+          <span className="text-white/30 text-lg">₹</span>
+          <span className={`font-black ${isUltra ? "text-6xl text-accent" : isPro ? "text-5xl text-white" : "text-4xl text-white/80"}`} style={{ fontFamily: "var(--font-heading)" }}>
+            {pkg.price.toLocaleString("en-IN")}
+          </span>
+        </div>
+        <span className="text-white/25 text-sm">/ {pkg.duration}</span>
       </div>
 
-      {/* Ultra: Perks icons */}
+      {/* Ultra: Perks grid — 4x2 */}
+      {isUltra && ultraPerks.length > 0 && (
+        <div className="mb-5">
+          <div className="text-[9px] font-semibold tracking-wider uppercase text-accent/50 mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+            VIP Perks Included
+          </div>
+          <div className="grid grid-cols-4 gap-2">
+            {ultraPerks.map((perk: any) => {
+              const PerkIcon = iconMap[perk.icon] || FaStar;
+              return (
+                <motion.div
+                  key={perk.label}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex flex-col items-center gap-1 p-2 rounded-lg bg-accent/[0.06] border border-accent/10 hover:border-accent/25 transition-colors cursor-default"
+                >
+                  <PerkIcon className="text-accent/70 text-sm" />
+                  <span className="text-[7px] text-accent/50 text-center leading-tight font-medium">{perk.label}</span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Ultra: "Everything in Pro +" divider */}
       {isUltra && (
-        <div className="grid grid-cols-4 gap-2 mb-5">
-          {ultraPerks.map((perk) => {
-            const PerkIcon = perk.icon;
-            return (
-              <div key={perk.label} className="flex flex-col items-center gap-1 p-2 rounded-lg bg-accent/5 border border-accent/10">
-                <PerkIcon className="accent-60 text-sm" />
-                <span className="text-[7px] accent-40 text-center leading-tight">{perk.label}</span>
-              </div>
-            );
-          })}
+        <div className="flex items-center gap-2 mb-4">
+          <div className="h-px flex-1 bg-accent/10" />
+          <span className="text-[8px] font-bold tracking-wider uppercase text-accent/40" style={{ fontFamily: "var(--font-heading)" }}>
+            Everything in Pro +
+          </span>
+          <div className="h-px flex-1 bg-accent/10" />
         </div>
       )}
 

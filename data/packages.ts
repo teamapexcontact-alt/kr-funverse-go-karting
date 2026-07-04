@@ -6,6 +6,7 @@ export interface Package {
   features: string[];
   isPopular: boolean;
   tier: "basic" | "pro" | "ultra";
+  perks?: { icon: string; label: string }[];
 }
 
 export const packages: Package[] = [
@@ -57,5 +58,15 @@ export const packages: Package[] = [
     ],
     isPopular: true,
     tier: "ultra",
+    perks: [
+      { icon: "FaCouch", label: "VIP Lounge" },
+      { icon: "FaUtensils", label: "₹200 Meal" },
+      { icon: "FaTshirt", label: "Free Merch" },
+      { icon: "FaCamera", label: "Photo Booth" },
+      { icon: "FaIdBadge", label: "Coordinator" },
+      { icon: "FaTicketAlt", label: "Skip Line" },
+      { icon: "FaTrophy", label: "Victory Medal" },
+      { icon: "FaImage", label: "Race Photos" },
+    ],
   },
 ];
