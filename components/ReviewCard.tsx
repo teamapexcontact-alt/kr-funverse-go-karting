@@ -8,7 +8,7 @@ interface ReviewCardProps {
 
 export default function ReviewCard({ review }: ReviewCardProps) {
   return (
-    <article className="bg-surface rounded-2xl border border-white/5 p-6 hover:border-accent/20 transition-all duration-300">
+    <article className="bg-surface rounded-2xl border border-white/5 p-6 hover:border-steel/30 transition-all duration-300">
       {/* Google badge */}
       <div className="flex items-center gap-2 mb-4">
         <FaGoogle className="text-accent" size={16} />

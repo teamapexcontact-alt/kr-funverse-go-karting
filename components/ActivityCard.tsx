@@ -8,7 +8,7 @@ interface ActivityCardProps {
 
 export default function ActivityCard({ activity }: ActivityCardProps) {
   return (
-    <article className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 hover:border-gold/20 transition-all duration-500">
+    <article className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 hover:border-steel/30 transition-all duration-500">
       {/* Image */}
       <div className="relative h-48 md:h-52 overflow-hidden">
         <div
@@ -58,7 +58,7 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
         {/* Highlights */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {activity.highlights.map((h) => (
-            <span key={h} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gold/[0.06] border border-gold/[0.12] text-[9px] gold-60">
+            <span key={h} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-accent/[0.06] border border-accent/[0.12] text-[9px] accent-60">
               <FaCheck size={6} />
               {h}
             </span>

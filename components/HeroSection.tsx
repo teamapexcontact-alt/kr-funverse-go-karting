@@ -26,7 +26,7 @@ export default function HeroSection() {
 
       {/* Track bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gold/10" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-steel/10" />
         <div className="absolute bottom-3 left-0 right-0 h-px bg-white/[0.04]" />
       </div>
 
@@ -34,7 +34,7 @@ export default function HeroSection() {
       {phase >= 1 && [...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent"
+          className="absolute h-px bg-gradient-to-r from-transparent via-steel/15 to-transparent"
           style={{ top: `${25 + i * 18}%` }}
           initial={{ width: 0, x: "-50%" }}
           animate={{ width: "100%", x: "150%", opacity: [0, 0.3, 0] }}
@@ -190,7 +190,7 @@ export default function HeroSection() {
         {[
           { icon: FaWhatsapp, color: "text-emerald-400", bg: "bg-emerald-500/10", href: "https://wa.me/919876543210" },
           { icon: FaInstagram, color: "text-pink-400", bg: "bg-pink-500/10", href: "https://instagram.com/krfunverse" },
-          { icon: FaPhone, color: "text-gold", bg: "bg-gold/10", href: "tel:+919876543210" },
+          { icon: FaPhone, color: "text-steel-light", bg: "bg-steel/10", href: "tel:+919876543210" },
         ].map((item, i) => {
           const Icon = item.icon;
           return (

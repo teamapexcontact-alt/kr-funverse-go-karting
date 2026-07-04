@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Black+Ops+One&display=swap');
 @import "tailwindcss";
 
-/* ─── PALETTE 2 — Classic Metallic Gold ───
-   Backgrounds:  Base Black #0A0A0C → Elevated Surface #17171B → Border #2A2A2F
-   Text:         Heading White #F5F5F0 → Body White #E5E2DC → Chrome #A69C8E → Chrome Muted #78716A
-   Gold:         Primary #D4AF37 → Hover #B8912A
-   Red:          Racing Red #E4302C (only Pro badge + logo)
+/* ─── PALETTE 3 — Ignition Red + Steel Blue ───
+   Backgrounds:  Void Black #060607 → Carbon #101013 → Ash #1F2024
+   Text:         Ivory White #F7F7F5 → Fog White #E3E3E0 → Platinum #9CA3AA → Graphite #686E73
+   Red:          Ignition #E8362E → Crimson Deep #A61F1B → Flare Coral #FF6B5B
+   Steel Blue:   #3E5C76 → Steel Light #7C99B0
 */
 
 @theme inline {
-  --color-background: #0A0A0C;
-  --color-surface: #17171B;
-  --color-carbon: #2A2A2F;
-  --color-border: #2A2A2F;
-  --color-accent: #D4AF37;
-  --color-accent-bright: #D4AF37;
-  --color-accent-dark: #B8912A;
-  --color-gold: #D4AF37;
-  --color-gold-hover: #B8912A;
-  --color-red: #E4302C;
-  --color-chrome: #A69C8E;
-  --color-chrome-muted: #78716A;
-  --color-heading: #F5F5F0;
-  --color-foreground: #E5E2DC;
-  --color-titanium: #A69C8E;
-  --color-steel: #78716A;
+  --color-background: #060607;
+  --color-surface: #101013;
+  --color-carbon: #1F2024;
+  --color-border: #1F2024;
+  --color-accent: #E8362E;
+  --color-accent-bright: #FF6B5B;
+  --color-accent-dark: #A61F1B;
+  --color-red: #E8362E;
+  --color-red-deep: #A61F1B;
+  --color-coral: #FF6B5B;
+  --color-steel: #3E5C76;
+  --color-steel-light: #7C99B0;
+  --color-platinum: #9CA3AA;
+  --color-graphite: #686E73;
+  --color-heading: #F7F7F5;
+  --color-foreground: #E3E3E0;
+  --color-gold: #E8362E;
 
   --font-heading: 'Rajdhani', 'Bebas Neue', system-ui, sans-serif;
   --font-body: 'Poppins', system-ui, sans-serif;
@@ -37,7 +38,7 @@ html {
 
 body {
   background: var(--color-background);
-  color: #E5E2DC;
+  color: #E3E3E0;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
@@ -46,75 +47,75 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #F5F5F0;
+  color: #F7F7F5;
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.25);
-  color: #F5F5F0;
+  background: rgba(232, 54, 46, 0.25);
+  color: #F7F7F5;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0A0A0C; }
-::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.6); }
+::-webkit-scrollbar-track { background: #060607; }
+::-webkit-scrollbar-thumb { background: rgba(232,54,46,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(232,54,46,0.6); }
 
 /* ─── GLASS ─── */
 .glass {
-  background: rgba(10, 10, 12, 0.6);
+  background: rgba(6, 6, 7, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(245, 245, 240, 0.06);
+  border: 1px solid rgba(247, 247, 245, 0.06);
 }
 
 .glass-strong {
-  background: rgba(10, 10, 12, 0.8);
+  background: rgba(6, 6, 7, 0.8);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+  border-bottom: 1px solid rgba(62, 92, 118, 0.08);
 }
 
 .glass-card {
-  background: rgba(245, 245, 240, 0.03);
+  background: rgba(247, 247, 245, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 245, 240, 0.06);
-  box-shadow: inset 0 1px 0 0 rgba(245, 245, 240, 0.04), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(247, 247, 245, 0.06);
+  box-shadow: inset 0 1px 0 0 rgba(247, 247, 245, 0.04), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
-.glass-card-gold {
-  background: rgba(245, 245, 240, 0.03);
+.glass-card-red {
+  background: rgba(247, 247, 245, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  box-shadow: inset 0 1px 0 0 rgba(245, 245, 240, 0.05), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15), 0 0 60px rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(232, 54, 46, 0.15);
+  box-shadow: inset 0 1px 0 0 rgba(247, 247, 245, 0.05), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15), 0 0 60px rgba(232, 54, 46, 0.06);
 }
 
 .neumorph {
-  background: #17171B;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), -6px -6px 12px rgba(245, 245, 240, 0.02);
+  background: #101013;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), -6px -6px 12px rgba(247, 247, 245, 0.02);
 }
 
 .neumorph-inset {
-  background: #17171B;
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(245, 245, 240, 0.02);
+  background: #101013;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(247, 247, 245, 0.02);
 }
 
 /* ─── CARBON FIBER ─── */
 .bg-carbon {
-  background-color: #17171B;
+  background-color: #101013;
   background-image:
-    linear-gradient(45deg, rgba(245,245,240,0.015) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(245,245,240,0.015) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(245,245,240,0.015) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(245,245,240,0.015) 75%);
+    linear-gradient(45deg, rgba(247,247,245,0.015) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(247,247,245,0.015) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(247,247,245,0.015) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(247,247,245,0.015) 75%);
   background-size: 4px 4px;
   background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
 }
 
 /* ─── ASPHALT ─── */
 .bg-asphalt {
-  background-color: #0A0A0C;
+  background-color: #060607;
 }
 
 /* ─── SECTION DIVIDER ─── */
@@ -134,8 +135,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 1px;
   background: repeating-linear-gradient(
     90deg,
-    rgba(212,175,55,0.1) 0px,
-    rgba(212,175,55,0.1) 15px,
+    rgba(62,92,118,0.15) 0px,
+    rgba(62,92,118,0.15) 15px,
     transparent 15px,
     transparent 25px
   );
@@ -155,14 +156,18 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── GRID BACKGROUND ─── */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(62, 92, 118, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 92, 118, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* ─── NEON GLOW ─── */
-.neon-gold {
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.15), 0 0 40px rgba(212, 175, 55, 0.05);
+.neon-red {
+  box-shadow: 0 0 10px rgba(232, 54, 46, 0.3), 0 0 20px rgba(232, 54, 46, 0.15), 0 0 40px rgba(232, 54, 46, 0.05);
+}
+
+.neon-steel {
+  box-shadow: 0 0 10px rgba(62, 92, 118, 0.3), 0 0 20px rgba(62, 92, 118, 0.15), 0 0 40px rgba(62, 92, 118, 0.05);
 }
 
 /* ─── RACING STRIPE ─── */
@@ -178,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232, 54, 46, 0.08), transparent);
   animation: stripe-slide 4s ease-in-out infinite;
 }
 
@@ -189,14 +194,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── PIT STOP CARD — Glassmorphism ─── */
 .pit-stop-card {
-  background: rgba(245, 245, 240, 0.02);
+  background: rgba(247, 247, 245, 0.02);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 245, 240, 0.05);
+  border: 1px solid rgba(247, 247, 245, 0.05);
   border-radius: 1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 1px 0 0 rgba(245, 245, 240, 0.03), 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 0 rgba(247, 247, 245, 0.03), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .pit-stop-card::before {
@@ -206,23 +211,23 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232,54,46,0.5), transparent);
 }
 
 .pit-stop-card:hover {
-  border-color: rgba(212, 175, 55, 0.15);
-  box-shadow: inset 0 1px 0 0 rgba(245, 245, 240, 0.04), 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 40px rgba(212, 175, 55, 0.05);
+  border-color: rgba(62, 92, 118, 0.3);
+  box-shadow: inset 0 1px 0 0 rgba(247, 247, 245, 0.04), 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 40px rgba(62, 92, 118, 0.05);
 }
 
 /* ─── RACE TICKET — Glassmorphism ─── */
 .race-ticket {
-  background: rgba(245, 245, 240, 0.02);
+  background: rgba(247, 247, 245, 0.02);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 245, 240, 0.04);
+  border: 1px solid rgba(247, 247, 245, 0.04);
   border-radius: 1rem;
   position: relative;
-  box-shadow: inset 0 1px 0 0 rgba(245, 245, 240, 0.03);
+  box-shadow: inset 0 1px 0 0 rgba(247, 247, 245, 0.03);
 }
 
 .race-ticket::before {
@@ -232,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232,54,46,0.5), transparent);
 }
 
 /* ─── TRACK LANE ─── */
@@ -253,8 +258,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   background: repeating-linear-gradient(
     90deg,
-    rgba(212,175,55,0.2) 0px,
-    rgba(212,175,55,0.2) 20px,
+    rgba(232,54,46,0.2) 0px,
+    rgba(232,54,46,0.2) 20px,
     transparent 20px,
     transparent 40px
   );
@@ -264,8 +269,8 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   background: repeating-linear-gradient(
     90deg,
-    rgba(212,175,55,0.2) 0px,
-    rgba(212,175,55,0.2) 20px,
+    rgba(232,54,46,0.2) 0px,
+    rgba(232,54,46,0.2) 20px,
     transparent 20px,
     transparent 40px
   );
@@ -293,8 +298,8 @@ h1, h2, h3, h4, h5, h6 {
   background-image:
     repeating-linear-gradient(
       90deg,
-      rgba(245,245,240,0.03) 0px,
-      rgba(245,245,240,0.03) 10px,
+      rgba(247,247,245,0.03) 0px,
+      rgba(247,247,245,0.03) 10px,
       transparent 10px,
       transparent 20px
     );
@@ -307,42 +312,68 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.82;
-  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.12);
+  text-shadow: 0 4px 20px rgba(232, 54, 46, 0.12);
 }
 
 /* ─── COLOR INTENSITY SCALE ─── */
-/* Gold (primary accent — clickable/action) */
-.accent-100 { color: #D4AF37; }
-.accent-80  { color: rgba(212,175,55,0.8); }
-.accent-60  { color: rgba(212,175,55,0.6); }
-.accent-40  { color: rgba(212,175,55,0.4); }
-.accent-20  { color: rgba(212,175,55,0.2); }
+/* Red (primary accent — CTA, clickable/action) */
+.accent-100 { color: #E8362E; }
+.accent-80  { color: rgba(232,54,46,0.8); }
+.accent-60  { color: rgba(232,54,46,0.6); }
+.accent-40  { color: rgba(232,54,46,0.4); }
+.accent-20  { color: rgba(232,54,46,0.2); }
 
-.bg-accent-100 { background-color: #D4AF37; }
-.bg-accent-80  { background-color: rgba(212,175,55,0.8); }
-.bg-accent-60  { background-color: rgba(212,175,55,0.6); }
-.bg-accent-40  { background-color: rgba(212,175,55,0.4); }
-.bg-accent-20  { background-color: rgba(212,175,55,0.2); }
-.bg-accent-10  { background-color: rgba(212,175,55,0.1); }
+.bg-accent-100 { background-color: #E8362E; }
+.bg-accent-80  { background-color: rgba(232,54,46,0.8); }
+.bg-accent-60  { background-color: rgba(232,54,46,0.6); }
+.bg-accent-40  { background-color: rgba(232,54,46,0.4); }
+.bg-accent-20  { background-color: rgba(232,54,46,0.2); }
+.bg-accent-10  { background-color: rgba(232,54,46,0.1); }
+.bg-accent-6   { background-color: rgba(232,54,46,0.06); }
 
-/* Chrome (secondary/supporting — informational) */
-.chrome      { color: #A69C8E; }
-.chrome-80   { color: rgba(166,156,142,0.8); }
-.chrome-60   { color: rgba(166,156,142,0.6); }
-.chrome-40   { color: rgba(166,156,142,0.4); }
-.chrome-20   { color: rgba(166,156,142,0.2); }
+/* Platinum (secondary/supporting — informational) */
+.platinum      { color: #9CA3AA; }
+.platinum-80   { color: rgba(156,163,170,0.8); }
+.platinum-60   { color: rgba(156,163,170,0.6); }
+.platinum-40   { color: rgba(156,163,170,0.4); }
+.platinum-20   { color: rgba(156,163,170,0.2); }
 
-/* Gold (alias for accent — clickable/action) */
-.gold        { color: #D4AF37; }
-.gold-80     { color: rgba(212,175,55,0.8); }
-.gold-60     { color: rgba(212,175,55,0.6); }
-.gold-40     { color: rgba(212,175,55,0.4); }
-.gold-20     { color: rgba(212,175,55,0.2); }
+/* Chrome alias (for backward compat — now maps to Platinum) */
+.chrome        { color: #9CA3AA; }
+.chrome-80     { color: rgba(156,163,170,0.8); }
+.chrome-60     { color: rgba(156,163,170,0.6); }
+.chrome-40     { color: rgba(156,163,170,0.4); }
+.chrome-20     { color: rgba(156,163,170,0.2); }
 
-.bg-gold     { background-color: #D4AF37; }
-.bg-gold-80  { background-color: rgba(212,175,55,0.8); }
-.bg-gold-20  { background-color: rgba(212,175,55,0.2); }
-.bg-gold-10  { background-color: rgba(212,175,55,0.1); }
+/* Gold alias (now maps to Red — for backward compat) */
+.gold          { color: #E8362E; }
+.gold-80       { color: rgba(232,54,46,0.8); }
+.gold-60       { color: rgba(232,54,46,0.6); }
+.gold-40       { color: rgba(232,54,46,0.4); }
+.gold-20       { color: rgba(232,54,46,0.2); }
+
+.bg-gold       { background-color: #E8362E; }
+.bg-gold-80    { background-color: rgba(232,54,46,0.8); }
+.bg-gold-20    { background-color: rgba(232,54,46,0.2); }
+.bg-gold-10    { background-color: rgba(232,54,46,0.1); }
+
+/* Steel Blue scale */
+.steel         { color: #3E5C76; }
+.steel-80      { color: rgba(62,92,118,0.8); }
+.steel-60      { color: rgba(62,92,118,0.6); }
+.steel-40      { color: rgba(62,92,118,0.4); }
+.steel-30      { color: rgba(62,92,118,0.3); }
+.steel-20      { color: rgba(62,92,118,0.2); }
+.steel-10      { color: rgba(62,92,118,0.1); }
+
+.bg-steel      { background-color: #3E5C76; }
+.bg-steel-20   { background-color: rgba(62,92,118,0.2); }
+.bg-steel-10   { background-color: rgba(62,92,118,0.1); }
+
+/* Flare Coral (ratings, Pro badge) */
+.coral         { color: #FF6B5B; }
+.coral-80      { color: rgba(255,107,91,0.8); }
+.coral-60      { color: rgba(255,107,91,0.6); }
 
 /* ─── FLOATING WHATSAPP ─── */
 @keyframes wa-pulse {

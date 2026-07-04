@@ -85,11 +85,11 @@ export default function HeroTrack() {
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Outer edge glow */}
-        <ellipse cx="0" cy="0" rx={rx + 14} ry={ry + 14} fill="none" stroke="rgba(255,30,30,0.04)" strokeWidth="2" />
+        <ellipse cx="0" cy="0" rx={rx + 14} ry={ry + 14} fill="none" stroke="rgba(232,54,46,0.04)" strokeWidth="2" />
         {/* Track surface */}
-        <ellipse cx="0" cy="0" rx={rx} ry={ry} fill="rgba(255,30,30,0.015)" stroke="rgba(255,30,30,0.08)" strokeWidth="0.5" />
+        <ellipse cx="0" cy="0" rx={rx} ry={ry} fill="rgba(232,54,46,0.015)" stroke="rgba(232,54,46,0.08)" strokeWidth="0.5" />
         {/* Inner edge */}
-        <ellipse cx="0" cy="0" rx={rx - 14} ry={ry - 14} fill="none" stroke="rgba(255,30,30,0.06)" strokeWidth="1" />
+        <ellipse cx="0" cy="0" rx={rx - 14} ry={ry - 14} fill="none" stroke="rgba(232,54,46,0.06)" strokeWidth="1" />
 
         {/* Center lane dashes */}
         <ellipse cx="0" cy="0" rx={rx - 7} ry={ry - 7} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="0.5" strokeDasharray="3 5" />
@@ -112,7 +112,7 @@ export default function HeroTrack() {
           const my = (ry - 20) * Math.sin(rad);
           const tangent = Math.atan2(ry * Math.cos(rad), -rx * Math.sin(rad));
           return (
-            <line key={deg} x1={mx - 2} y1={my} x2={mx + 2} y2={my} stroke="rgba(255,30,30,0.05)" strokeWidth="0.5" transform={`rotate(${tangent * 180 / Math.PI} ${mx} ${my})`} />
+            <line key={deg} x1={mx - 2} y1={my} x2={mx + 2} y2={my} stroke="rgba(232,54,46,0.05)" strokeWidth="0.5" transform={`rotate(${tangent * 180 / Math.PI} ${mx} ${my})`} />
           );
         })}
       </svg>
@@ -139,7 +139,7 @@ export default function HeroTrack() {
             className="absolute inset-0 rounded-full"
             animate={{ opacity: [0, 0.15, 0], scale: [1, 1.02, 1] }}
             transition={{ duration: 0.1, repeat: Infinity }}
-            style={{ background: "rgba(255,30,30,0.08)", filter: "blur(4px)" }}
+            style={{ background: "rgba(232,54,46,0.08)", filter: "blur(4px)" }}
           />
         )}
       </motion.div>

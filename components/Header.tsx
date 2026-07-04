@@ -47,10 +47,10 @@ export default function Header() {
           : "bg-transparent"
       }`} />
 
-      {/* Gold accent line at top — only when scrolled */}
+      {/* Steel blue accent line at top — only when scrolled */}
       <div className={`absolute top-0 left-0 right-0 h-[1px] transition-all duration-700 ${
         scrolled
-          ? "bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-100"
+          ? "bg-gradient-to-r from-transparent via-steel/30 to-transparent opacity-100"
           : "opacity-0"
       }`} />
 
@@ -116,7 +116,7 @@ export default function Header() {
           <div className="hidden sm:block w-px h-4 bg-white/10" />
           <Link
             href="/booking"
-            className="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-black text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(212,168,67,0.15)] hover:shadow-[0_0_25px_rgba(212,168,67,0.3)] uppercase tracking-wider"
+            className="hidden sm:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(232,54,46,0.15)] hover:shadow-[0_0_25px_rgba(232,54,46,0.3)] uppercase tracking-wider"
           >
             BOOK YOUR SLOT
           </Link>
@@ -170,7 +170,7 @@ export default function Header() {
               <Link
                 href="/booking"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 bg-gold hover:bg-gold-dark text-black text-xs font-bold px-5 py-3 rounded-xl text-center uppercase tracking-wider"
+                className="mt-4 bg-accent hover:bg-accent-dark text-white text-xs font-bold px-5 py-3 rounded-xl text-center uppercase tracking-wider"
               >
                 BOOK YOUR SLOT
               </Link>

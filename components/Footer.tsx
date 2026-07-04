@@ -4,7 +4,7 @@ import { FaWhatsapp, FaInstagram, FaMapMarkerAlt, FaPhone, FaClock, FaFlagChecke
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 mt-auto bg-background">
-      <div className="h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-steel/20 to-transparent" />
 
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">

@@ -46,16 +46,16 @@ export default function Button({
   const baseClasses = `inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 ${sizes[size]} ${disabled ? "opacity-40 cursor-not-allowed" : ""} ${className}`;
 
   const variantClasses = {
-    primary: "bg-gold text-black hover:bg-gold-dark",
+    primary: "bg-accent text-white hover:bg-accent-dark",
     secondary: "bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/10",
-    outline: "bg-transparent border-2 border-white/15 text-white/80 hover:border-gold/50 hover:text-gold",
+    outline: "bg-transparent border-2 border-white/15 text-white/80 hover:border-accent/50 hover:text-accent",
     glass: "bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] text-white hover:bg-white/[0.1] hover:border-white/[0.15]",
   };
 
   const hoverStyles = {
     primary: isHovered
-      ? { boxShadow: "0 0 30px rgba(212,168,67,0.4), 0 0 60px rgba(212,168,67,0.15)" }
-      : { boxShadow: "0 0 15px rgba(212,168,67,0.2)" },
+      ? { boxShadow: "0 0 30px rgba(232,54,46,0.4), 0 0 60px rgba(232,54,46,0.15)" }
+      : { boxShadow: "0 0 15px rgba(232,54,46,0.2)" },
     secondary: {},
     outline: {},
     glass: isHovered

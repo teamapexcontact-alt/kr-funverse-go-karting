@@ -82,7 +82,7 @@ export default function Timeline() {
     <section ref={sectionRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 h-dvh flex items-center justify-center overflow-hidden bg-carbon">
         {/* Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,30,30,0.03)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,54,46,0.03)_0%,transparent_70%)]" />
         <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: `radial-gradient(circle at 20px 20px,rgba(255,255,255,0.03)1px,transparent 1px)`, backgroundSize: "40px 40px" }} />
 
         {/* Header */}
@@ -99,13 +99,13 @@ export default function Timeline() {
           {/* Track SVG */}
           <svg viewBox="-240 -150 480 300" className="absolute inset-0 w-full h-full z-10 pointer-events-none">
             <ellipse cx="0" cy="0" rx={RX + 16} ry={RY + 10} fill="none" stroke="rgba(255,255,255,0.025)" strokeWidth="1" />
-            <ellipse cx="0" cy="0" rx={RX} ry={RY} fill="rgba(255,30,30,0.006)" stroke="rgba(255,30,30,0.03)" strokeWidth="0.5" />
+            <ellipse cx="0" cy="0" rx={RX} ry={RY} fill="rgba(232,54,46,0.006)" stroke="rgba(232,54,46,0.03)" strokeWidth="0.5" />
             <ellipse cx="0" cy="0" rx={RX - 16} ry={RY - 10} fill="none" stroke="rgba(255,255,255,0.025)" strokeWidth="1" />
             <ellipse cx="0" cy="0" rx={RX - 8} ry={RY - 5} fill="none" stroke="rgba(255,255,255,0.025)" strokeWidth="0.5" strokeDasharray="3 5" />
             <line x1={RX-16} y1={0} x2={RX} y2={0} stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" strokeDasharray="2 3" />
-            <g transform={`translate(${RX+3}, -6)`}>{[0,1,2,3].map(j => <rect key={j} x={j*3} y={0} width={3} height={3} fill={j%2===0?"rgba(255,255,255,0.12)":"rgba(255,30,30,0.12)"}/>)}</g>
+            <g transform={`translate(${RX+3}, -6)`}>{[0,1,2,3].map(j => <rect key={j} x={j*3} y={0} width={3} height={3} fill={j%2===0?"rgba(255,255,255,0.12)":"rgba(232,54,46,0.12)"}/>)}</g>
             <g transform={`translate(${kartPos.x}, ${kartPos.y}) rotate(${kartDeg + 90})`}>
-              <rect x="-7" y="-3.5" width="14" height="7" rx="2.5" fill="#E4302C" />
+              <rect x="-7" y="-3.5" width="14" height="7" rx="2.5" fill="#E8362E" />
               <rect x="-5" y="-2.5" width="10" height="5" rx="1.5" fill="#111" />
               <circle cx="3.5" cy="0" r="2.5" fill="#fff" /><circle cx="3.5" cy="0" r="1.5" fill="#111" />
               <rect x="-8" y="-4.5" width="2" height="9" rx="0.5" fill="#fff" opacity="0.7" />
@@ -141,9 +141,9 @@ export default function Timeline() {
                   )}
                   <div className={`rounded-full flex items-center justify-center transition-all duration-500 ${
                     isCurrent
-                      ? "bg-accent shadow-[0_0_25px_rgba(255,30,30,0.4)] scale-110"
+                      ? "bg-accent shadow-[0_0_25px_rgba(232,54,46,0.4)] scale-110"
                       : isActive
-                      ? "bg-accent/70 shadow-[0_0_10px_rgba(255,30,30,0.15)]"
+                      ? "bg-accent/70 shadow-[0_0_10px_rgba(232,54,46,0.15)]"
                       : "bg-surface/90 border border-white/10 hover:border-white/30"
                   }`} style={{ width: 32, height: 32 }}>
                     <Icon size={isCurrent ? 14 : isActive ? 12 : 10} className={`transition-all duration-300 ${isCurrent || isActive ? "text-white" : "text-white/30 group-hover:text-white/60"}`} />

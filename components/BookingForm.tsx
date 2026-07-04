@@ -119,7 +119,7 @@ export default function BookingForm() {
               <div
                 className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold transition-all ${
                   active
-                    ? "bg-accent text-white shadow-[0_0_12px_rgba(255,30,30,0.3)]"
+                    ? "bg-accent text-white shadow-[0_0_12px_rgba(232,54,46,0.3)]"
                     : "bg-white/5 text-white/30"
                 }`}
               >
@@ -159,7 +159,7 @@ export default function BookingForm() {
                     onClick={() => update("activity", a.id)}
                     className={`p-4 rounded-xl border text-left transition-all duration-200 ${
                       selected
-                        ? "border-accent/50 bg-accent/[0.08] shadow-[0_0_16px_rgba(255,30,30,0.1)]"
+                        ? "border-accent/50 bg-accent/[0.08] shadow-[0_0_16px_rgba(232,54,46,0.1)]"
                         : "border-white/5 bg-surface hover:border-white/10"
                     }`}
                   >
