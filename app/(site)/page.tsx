@@ -48,6 +48,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* WHY KR FUNVERSE — single clean grid */}
       <section className="py-16 md:py-20 bg-carbon">
         <div className="container-custom">
@@ -92,6 +94,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ACTIVITIES — 1 row of 3 */}
       <section className="py-20 md:py-28 bg-asphalt relative overflow-hidden" id="activities">
