@@ -8,7 +8,7 @@ interface ActivityCardProps {
 
 export default function ActivityCard({ activity }: ActivityCardProps) {
   return (
-    <article className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 hover:border-red-500/15 transition-all duration-500">
+    <article className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 hover:border-gold/20 transition-all duration-500">
       {/* Image */}
       <div className="relative h-48 md:h-52 overflow-hidden">
         <div
@@ -29,7 +29,7 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
 
         {/* Checkered flag corner */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <FaFlagCheckered className="gold-60 text-lg" />
+          <FaFlagCheckered className="chrome text-lg" />
         </div>
       </div>
 
@@ -46,11 +46,11 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
         {/* Meta */}
         <div className="flex items-center gap-4 mb-3 text-xs chrome-40">
           <span className="flex items-center gap-1.5">
-            <FaClock className="gold-60" size={10} />
+            <FaClock className="chrome-60" size={10} />
             {activity.duration}
           </span>
           <span className="flex items-center gap-1.5">
-            <FaUsers className="gold-60" size={10} />
+            <FaUsers className="chrome-60" size={10} />
             {activity.suitableFor}
           </span>
         </div>
@@ -58,7 +58,7 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
         {/* Highlights */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {activity.highlights.map((h) => (
-            <span key={h} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-accent/5 border border-accent/8 text-[9px] accent-60">
+            <span key={h} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gold/[0.06] border border-gold/[0.12] text-[9px] gold-60">
               <FaCheck size={6} />
               {h}
             </span>

@@ -105,7 +105,7 @@ export default function Timeline() {
             <line x1={RX-16} y1={0} x2={RX} y2={0} stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" strokeDasharray="2 3" />
             <g transform={`translate(${RX+3}, -6)`}>{[0,1,2,3].map(j => <rect key={j} x={j*3} y={0} width={3} height={3} fill={j%2===0?"rgba(255,255,255,0.12)":"rgba(255,30,30,0.12)"}/>)}</g>
             <g transform={`translate(${kartPos.x}, ${kartPos.y}) rotate(${kartDeg + 90})`}>
-              <rect x="-7" y="-3.5" width="14" height="7" rx="2.5" fill="#D72638" />
+              <rect x="-7" y="-3.5" width="14" height="7" rx="2.5" fill="#E4302C" />
               <rect x="-5" y="-2.5" width="10" height="5" rx="1.5" fill="#111" />
               <circle cx="3.5" cy="0" r="2.5" fill="#fff" /><circle cx="3.5" cy="0" r="1.5" fill="#111" />
               <rect x="-8" y="-4.5" width="2" height="9" rx="0.5" fill="#fff" opacity="0.7" />
