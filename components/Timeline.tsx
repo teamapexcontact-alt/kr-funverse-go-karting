@@ -88,8 +88,8 @@ export default function Timeline() {
         {/* Header */}
         <div className="absolute top-6 md:top-10 left-1/2 -translate-x-1/2 text-center z-30 pointer-events-none">
           <h2 className="text-xl md:text-3xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>
-            <span className="accent-80">EXPERIENCE THE </span>
-            <span className="accent-100">THRILL</span>
+            <span className="chrome-80">EXPERIENCE THE </span>
+            <span className="gold">THRILL</span>
           </h2>
           <p className="chrome-40 text-xs mt-1 tracking-widest uppercase">Scroll to advance — hover checkpoints</p>
         </div>
@@ -165,18 +165,18 @@ export default function Timeline() {
 
           {/* Content card — desktop: positioned near checkpoint; mobile: fixed bottom panel */}
           {isMobile ? (
-            /* Mobile: fixed panel at bottom */
+            /* Mobile: fixed panel at very bottom of screen */
             <motion.div
               key={displayIdx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: displayIdx >= 0 ? 1 : 0, y: displayIdx >= 0 ? 0 : 20 }}
-              className="absolute bottom-16 left-4 right-4 z-30 pointer-events-none"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: displayIdx >= 0 ? 1 : 0, y: displayIdx >= 0 ? 0 : 16 }}
+              className="absolute bottom-3 left-3 right-3 z-30 pointer-events-none"
             >
               {displayIdx >= 0 && (
-                <div className="bg-surface/95 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl shadow-black/60 max-w-sm mx-auto">
+                <div className="bg-black/80 backdrop-blur-2xl border border-white/[0.08] rounded-2xl px-5 py-4 shadow-2xl shadow-black/80 max-w-sm mx-auto">
                   <div className="flex items-center gap-2 mb-2">
-                    {(() => { const Icon = steps[displayIdx].icon; return <Icon className="accent-60" size={12} />; })()}
-                    <span className="accent-60 text-[9px] font-semibold tracking-wider uppercase">Step 0{displayIdx + 1}</span>
+                    {(() => { const Icon = steps[displayIdx].icon; return <Icon className="gold-80" size={12} />; })()}
+                    <span className="gold-60 text-[9px] font-semibold tracking-wider uppercase">Step 0{displayIdx + 1}</span>
                   </div>
                   <h3 className="text-white font-bold text-base" style={{ fontFamily: "var(--font-heading)" }}>{steps[displayIdx].title}</h3>
                   <p className="chrome-60 text-xs mt-1 leading-relaxed">{steps[displayIdx].detail}</p>
@@ -199,10 +199,10 @@ export default function Timeline() {
                   className="absolute z-30 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                   style={{ left: pct.l, top: pct.t }}
                 >
-                  <div className="bg-surface/90 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 shadow-2xl shadow-black/40 w-[170px]">
+                  <div className="bg-black/80 backdrop-blur-2xl border border-white/[0.08] rounded-xl px-4 py-3 shadow-2xl shadow-black/40 w-[170px]">
                     <div className="flex items-center gap-1.5 mb-1">
-                      {(() => { const Icon = steps[i].icon; return <Icon className="accent-60" size={10} />; })()}
-                      <span className="accent-60 text-[8px] font-semibold tracking-wider uppercase">Step 0{i + 1}</span>
+                      {(() => { const Icon = steps[i].icon; return <Icon className="gold-80" size={10} />; })()}
+                      <span className="gold-60 text-[8px] font-semibold tracking-wider uppercase">Step 0{i + 1}</span>
                     </div>
                     <h3 className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-heading)" }}>{steps[i].title}</h3>
                     <p className="chrome-60 text-[9px] mt-0.5 leading-relaxed">{steps[i].detail}</p>
@@ -213,10 +213,10 @@ export default function Timeline() {
           )}
         </div>
 
-        {/* Progress */}
-        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-30">
+        {/* Progress — hidden on mobile (detail panel is there) */}
+        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 items-center gap-3 z-30 hidden md:flex">
           <motion.div className="w-20 h-[2px] rounded-full bg-white/5 relative overflow-hidden">
-            <motion.div className="h-full rounded-full bg-accent/40" style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }} />
+            <motion.div className="h-full rounded-full bg-gold-40" style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }} />
           </motion.div>
           <span className="text-[10px] chrome-40 font-mono">{progress}%</span>
         </div>

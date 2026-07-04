@@ -53,9 +53,9 @@ export default function HomePage() {
         <div className="container-custom">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">WHY </span>
-              <span className="accent-100">KR FUNVERSE</span>
-              <span className="accent-80">?</span>
+              <span className="chrome-80">WHY </span>
+              <span className="gold">KR FUNVERSE</span>
+              <span className="chrome-80">?</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-10 text-sm">
               We prioritize your safety and enjoyment above everything.
@@ -69,8 +69,8 @@ export default function HomePage() {
                 <AnimatedSection key={item.title} delay={i * 60}>
                   <div className="pit-stop-card p-5 text-left h-full">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-accent-10 flex items-center justify-center shrink-0">
-                        <Icon className="accent-60 text-lg" />
+                      <div className="w-10 h-10 rounded-xl bg-gold-10 flex items-center justify-center shrink-0">
+                        <Icon className="gold-60 text-lg" />
                       </div>
                       <div>
                         <h3 className="text-white font-bold text-xs" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
@@ -80,7 +80,7 @@ export default function HomePage() {
                     <ul className="space-y-1.5">
                       {item.features.map((f: string) => (
                         <li key={f} className="flex items-center gap-2 text-[10px] text-white/35">
-                          <span className="w-1 h-1 rounded-full bg-accent-40 shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-gold-40 shrink-0" />
                           {f}
                         </li>
                       ))}
@@ -103,8 +103,8 @@ export default function HomePage() {
         <div className="container-custom relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">CHOOSE YOUR </span>
-              <span className="accent-100">ADVENTURE</span>
+              <span className="chrome-80">CHOOSE YOUR </span>
+              <span className="gold">ADVENTURE</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-12 text-sm">
               Speed, strategy, or fun — pick your arena.
@@ -132,9 +132,9 @@ export default function HomePage() {
         <div className="container-custom">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">WHY </span>
-              <span className="accent-100">RACE</span>
-              <span className="accent-80"> WITH US?</span>
+              <span className="chrome-80">WHY </span>
+              <span className="gold">RACE</span>
+              <span className="chrome-80"> WITH US?</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-12 text-sm">
               Built for speed. Designed for safety. Driven by passion.
@@ -152,11 +152,11 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-accent-10 flex items-center justify-center group-hover:bg-accent-20 transition-colors">
-                        <item.icon className="accent-60 text-lg" />
+                      <div className="w-10 h-10 rounded-xl bg-gold-10 flex items-center justify-center group-hover:bg-gold-20 transition-colors">
+                        <item.icon className="gold-60 text-lg" />
                       </div>
                       <div className="text-right">
-                        <div className="text-lg font-black accent-100" style={{ fontFamily: "var(--font-heading)" }}>{item.stat}</div>
+                        <div className="text-lg font-black gold" style={{ fontFamily: "var(--font-heading)" }}>{item.stat}</div>
                         <div className="text-[8px] chrome-40 tracking-wider uppercase">{item.statLabel}</div>
                       </div>
                     </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
                     <ul className="space-y-1">
                       {item.highlights.map((h: string) => (
                         <li key={h} className="flex items-center gap-1.5 text-[9px] text-white/20">
-                          <span className="w-0.5 h-0.5 rounded-full bg-accent-40 shrink-0" />
+                          <span className="w-0.5 h-0.5 rounded-full bg-gold-40 shrink-0" />
                           {h}
                         </li>
                       ))}
@@ -193,8 +193,8 @@ export default function HomePage() {
         <div className="container-custom">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">GOOGLE </span>
-              <span className="accent-100">REVIEWS</span>
+              <span className="chrome-80">GOOGLE </span>
+              <span className="gold">REVIEWS</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-12 text-sm">Real reviews from real visitors.</p>
           </AnimatedSection>
@@ -202,12 +202,12 @@ export default function HomePage() {
           <AnimatedSection>
             <div className="race-ticket p-8 mb-10 max-w-md mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-3">
-                <span className="accent-100 font-bold text-2xl" style={{ fontFamily: "var(--font-heading)" }}>G</span>
+                <span className="gold font-bold text-2xl" style={{ fontFamily: "var(--font-heading)" }}>G</span>
                 <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>REVIEWS</span>
               </div>
               <div className="text-5xl font-black text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>5.0</div>
               <div className="flex items-center justify-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (<FaStar key={i} className="accent-80 text-lg" />))}
+                {[...Array(5)].map((_, i) => (<FaStar key={i} className="gold text-lg" />))}
               </div>
               <p className="chrome-40 text-sm">Based on Google Reviews</p>
             </div>
@@ -230,8 +230,8 @@ export default function HomePage() {
         <div className="container-custom max-w-3xl">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">FREQUENTLY ASKED </span>
-              <span className="accent-100">QUESTIONS</span>
+              <span className="chrome-80">FREQUENTLY ASKED </span>
+              <span className="gold">QUESTIONS</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-12 text-sm">Everything you need to know before you visit.</p>
           </AnimatedSection>
@@ -246,8 +246,8 @@ export default function HomePage() {
         <div className="container-custom">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">FIND </span>
-              <span className="accent-100">US</span>
+              <span className="chrome-80">FIND </span>
+              <span className="gold">US</span>
             </h2>
             <p className="chrome-60 text-center max-w-xl mx-auto mb-12 text-sm">Rampally, Ghatkesar — Hyderabad.</p>
           </AnimatedSection>
@@ -272,9 +272,9 @@ export default function HomePage() {
               🏁
             </motion.div>
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="accent-80">READY TO </span>
-              <span className="accent-100">DOMINATE</span>
-              <span className="accent-80"><br />THE TRACK?</span>
+              <span className="chrome-80">READY TO </span>
+              <span className="gold">DOMINATE</span>
+              <span className="chrome-80"><br />THE TRACK?</span>
             </h2>
             <p className="chrome-60 max-w-xl mx-auto mb-10 text-base">
               Your grid position is waiting. Book your slot now and experience Hyderabad&apos;s most exciting entertainment destination.

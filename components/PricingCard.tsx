@@ -27,11 +27,11 @@ const tierConfig = {
     scale: "",
   },
   ultra: {
-    border: "border-yellow-500/50",
+    border: "border-gold/50",
     badge: "BEST VALUE",
     buttonVariant: "primary" as const,
-    glow: "shadow-[0_0_80px_rgba(255,200,0,0.15)]",
-    bg: "bg-gradient-to-b from-surface via-surface to-yellow-500/5",
+    glow: "shadow-[0_0_80px_rgba(212,168,67,0.15)]",
+    bg: "bg-gradient-to-b from-surface via-surface to-gold/5",
     scale: "md:scale-105 md:-my-3",
   },
 };
@@ -55,11 +55,11 @@ export default function PricingCard({ pkg }: PricingCardProps) {
     >
       {/* Clipped decorative glows */}
       <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-        {isUltra && (
-          <>
-            <div className="absolute -top-12 -right-12 w-32 h-32 bg-yellow-500/15 rounded-full blur-2xl" />
-            <div className="absolute -bottom-12 -left-12 w-28 h-28 bg-yellow-500/8 rounded-full blur-xl" />
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/60 to-transparent" />
+      {isUltra && (
+        <>
+          <div className="absolute -top-12 -right-12 w-32 h-32 bg-gold/15 rounded-full blur-2xl" />
+          <div className="absolute -bottom-12 -left-12 w-28 h-28 bg-gold/8 rounded-full blur-xl" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
           </>
         )}
         {isPro && (
@@ -70,7 +70,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
       {/* Badge */}
       {cfg.badge && (
         <div className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold px-5 py-1.5 rounded-full tracking-wider uppercase shadow-lg z-10 ${
-          isUltra ? "bg-yellow-500 text-black" : "bg-accent text-white"
+          isUltra ? "bg-gold text-black" : "bg-accent text-white"
         }`}>
           {cfg.badge}
         </div>
@@ -81,7 +81,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
         <div className="flex items-center gap-2 mb-1">
           {isUltra && (
             <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }}>
-              <FaCrown className="text-yellow-500" size={18} />
+              <FaCrown className="text-gold" size={18} />
             </motion.div>
           )}
           {isPro && <FaBolt className="text-accent" size={14} />}
@@ -94,7 +94,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
 
       {/* Price */}
       <div className="mb-5">
-        <span className={`font-black ${isUltra ? "text-6xl text-yellow-500" : isPro ? "text-5xl text-white" : "text-4xl text-white/80"}`} style={{ fontFamily: "var(--font-heading)" }}>
+        <span className={`font-black ${isUltra ? "text-6xl text-gold" : isPro ? "text-5xl text-white" : "text-4xl text-white/80"}`} style={{ fontFamily: "var(--font-heading)" }}>
           ₹{pkg.price.toLocaleString("en-IN")}
         </span>
         <span className="text-white/25 text-sm ml-1">/ {pkg.duration}</span>
@@ -106,9 +106,9 @@ export default function PricingCard({ pkg }: PricingCardProps) {
           {ultraPerks.map((perk) => {
             const PerkIcon = perk.icon;
             return (
-              <div key={perk.label} className="flex flex-col items-center gap-1 p-2 rounded-lg bg-yellow-500/5 border border-yellow-500/10">
-                <PerkIcon className="text-yellow-500/70 text-sm" />
-                <span className="text-[7px] text-yellow-500/50 text-center leading-tight">{perk.label}</span>
+              <div key={perk.label} className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gold/5 border border-gold/10">
+                <PerkIcon className="gold-60 text-sm" />
+                <span className="text-[7px] gold-40 text-center leading-tight">{perk.label}</span>
               </div>
             );
           })}
@@ -126,7 +126,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
             className={`flex items-start gap-2.5 text-sm ${isUltra ? "text-white/70" : "text-white/50"}`}
           >
             {isUltra ? (
-              <FaStar className="mt-0.5 shrink-0 text-yellow-500" size={10} />
+              <FaStar className="mt-0.5 shrink-0 text-gold" size={10} />
             ) : (
               <FaCheck className="mt-0.5 shrink-0 text-accent" size={11} />
             )}
@@ -139,7 +139,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
       <Button
         href="/booking"
         variant={cfg.buttonVariant}
-        className={`w-full ${isUltra ? "bg-yellow-500 text-black hover:bg-yellow-400 border-yellow-500 font-bold" : ""}`}
+        className={`w-full ${isUltra ? "bg-gold text-black hover:bg-gold-dark border-gold font-bold" : ""}`}
       >
         {isUltra ? (
           <><FaCrown className="mr-1.5" size={13} /> Go Ultra</>
@@ -153,7 +153,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
       {/* Ultra: bottom sparkle line */}
       {isUltra && (
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent"
           animate={{ opacity: [0.3, 0.9, 0.3] }}
           transition={{ duration: 2, repeat: Infinity }}
         />

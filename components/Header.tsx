@@ -47,10 +47,10 @@ export default function Header() {
           : "bg-transparent"
       }`} />
 
-      {/* Red accent line at top — only when scrolled */}
+      {/* Gold accent line at top — only when scrolled */}
       <div className={`absolute top-0 left-0 right-0 h-[1px] transition-all duration-700 ${
         scrolled
-          ? "bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-100"
+          ? "bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-100"
           : "opacity-0"
       }`} />
 
@@ -58,7 +58,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="relative">
-            <FaFlagCheckered className="accent-80 text-xl group-hover:accent-100 transition-colors" />
+            <FaFlagCheckered className="gold-80 text-xl group-hover:gold transition-colors" />
             <div className="absolute inset-0 bg-accent/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <span
@@ -66,7 +66,7 @@ export default function Header() {
             style={{ fontFamily: "var(--font-heading)" }}
           >
             KR{" "}
-            <span className="accent-80 group-hover:accent-100 transition-colors">FUNVERSE</span>
+            <span className="gold-80 group-hover:gold transition-colors">FUNVERSE</span>
           </span>
         </Link>
 
@@ -116,7 +116,7 @@ export default function Header() {
           <div className="hidden sm:block w-px h-4 bg-white/10" />
           <Link
             href="/booking"
-            className="hidden sm:inline-flex items-center gap-2 bg-accent-80 hover:bg-accent text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(255,30,30,0.1)] hover:shadow-[0_0_25px_rgba(255,30,30,0.25)] uppercase tracking-wider"
+            className="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-black text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(212,168,67,0.15)] hover:shadow-[0_0_25px_rgba(212,168,67,0.3)] uppercase tracking-wider"
           >
             BOOK YOUR SLOT
           </Link>
@@ -170,7 +170,7 @@ export default function Header() {
               <Link
                 href="/booking"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 bg-accent-80 hover:bg-accent text-white text-xs font-bold px-5 py-3 rounded-xl text-center uppercase tracking-wider"
+                className="mt-4 bg-gold hover:bg-gold-dark text-black text-xs font-bold px-5 py-3 rounded-xl text-center uppercase tracking-wider"
               >
                 BOOK YOUR SLOT
               </Link>

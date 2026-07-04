@@ -4,7 +4,7 @@ import { FaWhatsapp, FaInstagram, FaMapMarkerAlt, FaPhone, FaClock, FaFlagChecke
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 mt-auto bg-background">
-      <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-4">
               <span className="text-2xl font-black text-white tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
-                KR <span className="text-accent">FUNVERSE</span>
+                KR <span className="gold">FUNVERSE</span>
               </span>
             </Link>
             <p className="text-white/30 text-sm leading-relaxed mb-6">
@@ -72,7 +72,7 @@ export default function Footer() {
               ].map((a) => (
                 <li key={a.href}>
                   <Link href={a.href} className="text-white/40 text-sm hover:text-white/70 transition-colors flex items-center gap-2">
-                    <FaFlagCheckered className="accent-40 text-[10px]" />
+                    <FaFlagCheckered className="gold-40 text-[10px]" />
                     {a.label}
                   </Link>
                 </li>
@@ -87,15 +87,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-white/40">
-                <FaMapMarkerAlt className="accent-60 mt-1 shrink-0" />
+                <FaMapMarkerAlt className="gold-60 mt-1 shrink-0" />
                 Rampally, Yamnapmet, Ghatkesar, Hyderabad
               </li>
               <li className="flex items-center gap-3 text-sm text-white/40">
-                <FaPhone className="accent-60 shrink-0" />
+                <FaPhone className="gold-60 shrink-0" />
                 +91 98765 43210
               </li>
               <li className="flex items-center gap-3 text-sm text-white/40">
-                <FaClock className="accent-60 shrink-0" />
+                <FaClock className="gold-60 shrink-0" />
                 10:00 AM — 9:00 PM (All days)
               </li>
             </ul>
