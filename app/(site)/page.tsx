@@ -114,7 +114,7 @@ export default function HomePage() {
             {activities.map((activity, i) => (
               <AnimatedSection key={activity.id} delay={i * 100}>
                 <div className="group relative h-full">
-                  <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/8 group-hover:via-accent/4 group-hover:to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
+                  <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-gold/0 via-gold/0 to-gold/0 group-hover:from-gold/6 group-hover:via-gold/3 group-hover:to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
                   <div className="relative">
                     <ActivityCard activity={activity} />
                   </div>
@@ -148,8 +148,8 @@ export default function HomePage() {
               { icon: FaUsers, title: "GROUP PACKAGES", stat: "6-20", statLabel: "Group Size", highlights: ["Birthday party packages available", "Corporate team building events", "College & club outings welcome"], desc: "Special rates for groups and celebrations" },
             ].map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 60}>
-                <motion.div whileHover={{ y: -4 }} className="relative overflow-hidden rounded-2xl bg-surface border border-white/5 p-5 h-full group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <motion.div whileHover={{ y: -4 }} className="relative overflow-hidden rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-white/5 p-5 h-full group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold/6 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-3">
                       <div className="w-10 h-10 rounded-xl bg-gold-10 flex items-center justify-center group-hover:bg-gold-20 transition-colors">

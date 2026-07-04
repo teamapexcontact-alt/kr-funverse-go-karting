@@ -50,7 +50,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-white/40 text-sm hover:text-white/70 transition-colors"
+                    className="text-white/40 text-sm hover:text-gold transition-colors"
                   >
                     {item}
                   </Link>
