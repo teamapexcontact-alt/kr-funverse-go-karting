@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 interface ButtonBaseProps {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "glass";
   size?: "sm" | "md" | "lg";
   className?: string;
   disabled?: boolean;
@@ -46,17 +46,21 @@ export default function Button({
   const baseClasses = `inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 ${sizes[size]} ${disabled ? "opacity-40 cursor-not-allowed" : ""} ${className}`;
 
   const variantClasses = {
-    primary: "bg-accent text-white",
+    primary: "bg-gold text-black hover:bg-gold-dark",
     secondary: "bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/10",
-    outline: "bg-transparent border-2 border-white/15 text-white/80 hover:border-accent/50 hover:text-accent",
+    outline: "bg-transparent border-2 border-white/15 text-white/80 hover:border-gold/50 hover:text-gold",
+    glass: "bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] text-white hover:bg-white/[0.1] hover:border-white/[0.15]",
   };
 
   const hoverStyles = {
     primary: isHovered
-      ? { boxShadow: "0 0 30px rgba(255,30,30,0.5), 0 0 60px rgba(255,30,30,0.2)" }
-      : { boxShadow: "0 0 20px rgba(255,30,30,0.3)" },
+      ? { boxShadow: "0 0 30px rgba(212,168,67,0.4), 0 0 60px rgba(212,168,67,0.15)" }
+      : { boxShadow: "0 0 15px rgba(212,168,67,0.2)" },
     secondary: {},
     outline: {},
+    glass: isHovered
+      ? { boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)" }
+      : { boxShadow: "0 4px 16px rgba(0,0,0,0.2)" },
   };
 
   const content = (
@@ -64,7 +68,7 @@ export default function Button({
       className={`${baseClasses} ${variantClasses[variant]}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-       whileHover={disabled ? {} : { scale: 1.03 }}
+      whileHover={disabled ? {} : { scale: 1.03 }}
       whileTap={disabled ? {} : { scale: 0.97 }}
       style={hoverStyles[variant]}
     >

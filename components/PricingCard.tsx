@@ -11,27 +11,27 @@ interface PricingCardProps {
 
 const tierConfig = {
   basic: {
-    border: "border-white/8",
+    border: "border-white/5 hover:border-white/10",
     badge: null as string | null,
     buttonVariant: "outline" as const,
     glow: "",
-    bg: "bg-surface",
+    bg: "bg-white/[0.02] backdrop-blur-sm",
     scale: "",
   },
   pro: {
-    border: "border-accent/30",
+    border: "border-accent/20",
     badge: "POPULAR",
     buttonVariant: "primary" as const,
-    glow: "shadow-[0_0_40px_rgba(255,30,30,0.1)]",
-    bg: "bg-surface",
+    glow: "shadow-[0_0_40px_rgba(255,30,30,0.08)]",
+    bg: "bg-white/[0.03] backdrop-blur-xl",
     scale: "",
   },
   ultra: {
-    border: "border-gold/50",
+    border: "border-gold/30",
     badge: "BEST VALUE",
     buttonVariant: "primary" as const,
-    glow: "shadow-[0_0_80px_rgba(212,168,67,0.15)]",
-    bg: "bg-gradient-to-b from-surface via-surface to-gold/5",
+    glow: "shadow-[0_0_80px_rgba(212,168,67,0.12)]",
+    bg: "bg-white/[0.03] backdrop-blur-2xl",
     scale: "md:scale-105 md:-my-3",
   },
 };
@@ -51,8 +51,10 @@ export default function PricingCard({ pkg }: PricingCardProps) {
   return (
     <motion.article
       whileHover={{ y: -8 }}
-      className={`relative rounded-2xl border p-6 md:p-7 transition-all duration-500 ${cfg.border} ${cfg.glow} ${cfg.bg} ${cfg.scale} backdrop-blur-sm`}
+      className={`relative rounded-2xl border p-6 md:p-7 transition-all duration-500 ${cfg.border} ${cfg.glow} ${cfg.bg} ${cfg.scale}`}
     >
+      {/* Glassmorphism inset highlight */}
+      <div className="absolute inset-0 rounded-2xl pointer-events-none" style={{ boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.06), inset 0 -1px 0 0 rgba(0,0,0,0.15)" }} />
       {/* Clipped decorative glows */}
       <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
       {isUltra && (

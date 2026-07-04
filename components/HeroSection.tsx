@@ -26,7 +26,7 @@ export default function HeroSection() {
 
       {/* Track bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-accent/20" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gold/10" />
         <div className="absolute bottom-3 left-0 right-0 h-px bg-white/[0.04]" />
       </div>
 
@@ -34,7 +34,7 @@ export default function HeroSection() {
       {phase >= 1 && [...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent"
+          className="absolute h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent"
           style={{ top: `${25 + i * 18}%` }}
           initial={{ width: 0, x: "-50%" }}
           animate={{ width: "100%", x: "150%", opacity: [0, 0.3, 0] }}
@@ -53,7 +53,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 bg-surface/60 border border-white/5 rounded-full px-3 py-1.5 mb-5 backdrop-blur-sm"
           >
             <span className="text-white/60 text-xs flex items-center gap-1" style={{ fontFamily: "var(--font-heading)" }}>
-              <FaStar className="text-accent" size={10} />
+              <FaStar className="text-gold" size={10} />
               5.0 on Google
             </span>
           </motion.div>
@@ -71,7 +71,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-accent inline-flex items-center gap-3"
+              className="text-gold inline-flex items-center gap-3"
             >
               HELMET.
               <motion.span
@@ -79,7 +79,7 @@ export default function HeroSection() {
                 transition={{ duration: 1.5, repeat: Infinity }}
                 className="inline-block"
               >
-                <FaBolt size={24} className="text-accent" />
+                <FaBolt size={24} className="text-gold" />
               </motion.span>
             </motion.span>
             <br />
@@ -95,7 +95,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 1.0 }}
-              className="text-accent inline-flex items-center gap-3"
+              className="text-gold inline-flex items-center gap-3"
             >
               ENGINE.
               <motion.span
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
                 className="inline-block"
               >
-                <FaBolt size={24} className="text-accent" />
+                <FaBolt size={24} className="text-gold" />
               </motion.span>
             </motion.span>
           </motion.h1>
@@ -123,7 +123,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.4 }}
-            className="text-accent/70 text-xs font-semibold tracking-[0.25em] uppercase mb-7"
+            className="gold-60 text-xs font-semibold tracking-[0.25em] uppercase mb-7"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             THE TRACK IS WAITING.
@@ -144,7 +144,7 @@ export default function HeroSection() {
                 transition={{ delay: 1.6 + i * 0.1 }}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface/60 border border-white/5 text-white/60 text-xs font-medium"
               >
-                <FaFlagCheckered className="text-accent" size={8} />
+                <FaFlagCheckered className="text-gold" size={8} />
                 {activity}
               </motion.span>
             ))}
@@ -174,7 +174,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 2.0 }}
             className="mt-6 inline-flex items-center gap-1.5 text-white/30 text-xs"
           >
-            <FaMapMarkerAlt className="text-accent" size={10} />
+            <FaMapMarkerAlt className="text-gold" size={10} />
             Rampally, Yamnapmet, Ghatkesar, Hyderabad
           </motion.div>
         </div>
@@ -190,7 +190,7 @@ export default function HeroSection() {
         {[
           { icon: FaWhatsapp, color: "text-emerald-400", bg: "bg-emerald-500/10", href: "https://wa.me/919876543210" },
           { icon: FaInstagram, color: "text-pink-400", bg: "bg-pink-500/10", href: "https://instagram.com/krfunverse" },
-          { icon: FaPhone, color: "text-accent", bg: "bg-accent/10", href: "tel:+919876543210" },
+          { icon: FaPhone, color: "text-gold", bg: "bg-gold/10", href: "tel:+919876543210" },
         ].map((item, i) => {
           const Icon = item.icon;
           return (

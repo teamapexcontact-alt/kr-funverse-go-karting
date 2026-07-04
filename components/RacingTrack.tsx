@@ -3,44 +3,119 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-function VerticalKart({ speed }: { speed: number }) {
-  const wheelY = speed * 2;
+function GoKart({ speed }: { speed: number }) {
+  const wheelSpin = speed * 4;
   return (
-    <svg width="20" height="42" viewBox="0 0 20 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="10" cy="40" rx="10" ry="2" fill="rgba(0,0,0,0.3)" />
-      <rect x="3" y="0" width="14" height="3" rx="0.5" fill="#FF1E1E" />
-      <rect x="6" y="3" width="8" height="2" rx="0.5" fill="#111" />
-      <path d="M3 5 L17 5 Q19 5 19 7 L18 20 Q18 22 16 22 L4 22 Q2 22 2 20 L1 7 Q1 5 3 5 Z" fill="#FF1E1E" />
-      <path d="M4 9 L16 9" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-      <path d="M5 7 L15 7 Q16 7 16 8 L16 12 Q16 13 15 13 L5 13 Q4 13 4 12 L4 8 Q4 7 5 7 Z" fill="#0D0D0D" />
-      <circle cx="10" cy="8.5" r="2.5" fill="#fff" opacity="0.85" />
-      <circle cx="10" cy="8.5" r="2" fill="#eee" />
-      <path d="M8.5 7.5 Q10 7 11.5 7.5" stroke="#1A1A1A" strokeWidth="0.8" fill="none" />
-      <path d="M10 6 L10 11" stroke="#FF1E1E" strokeWidth="0.5" />
-      <rect x="2" y="21" width="16" height="3" rx="0.5" fill="#111" />
-      <rect x="4" y="24" width="12" height="3" rx="0.5" fill="#FF1E1E" />
-      <rect x="1" y="21" width="1" height="4" fill="#FF1E1E" opacity="0.6" />
-      <rect x="18" y="21" width="1" height="4" fill="#FF1E1E" opacity="0.6" />
-      <rect x="2" y="0" width="1" height="3" fill="#FF1E1E" opacity="0.6" />
-      <rect x="17" y="0" width="1" height="3" fill="#FF1E1E" opacity="0.6" />
-      <g transform={`translate(10, 18) rotate(${wheelY})`}>
-        <rect x="-8" y="-1" width="3" height="5" rx="0.8" fill="#111" />
-        <rect x="5" y="-1" width="3" height="5" rx="0.8" fill="#111" />
+    <svg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Shadow */}
+      <ellipse cx="12" cy="46" rx="11" ry="2" fill="rgba(0,0,0,0.4)" />
+
+      {/* Rear wing support */}
+      <rect x="8" y="1" width="8" height="1" rx="0.3" fill="#333" />
+      {/* Rear wing */}
+      <rect x="4" y="0" width="16" height="3" rx="1" fill="#FF1E1E" />
+      <rect x="6" y="3" width="12" height="1.5" rx="0.5" fill="#222" />
+      {/* Wing endplates */}
+      <rect x="3" y="0" width="1.5" height="4" rx="0.3" fill="#FF1E1E" opacity="0.8" />
+      <rect x="19.5" y="0" width="1.5" height="4" rx="0.3" fill="#FF1E1E" opacity="0.8" />
+
+      {/* Engine cover */}
+      <rect x="7" y="4" width="10" height="3" rx="1" fill="#1a1a1a" />
+      <rect x="8" y="4.5" width="8" height="0.5" fill="rgba(255,255,255,0.05)" />
+      <rect x="8" y="5.5" width="8" height="0.5" fill="rgba(255,255,255,0.05)" />
+
+      {/* Main body */}
+      <path d="M5 7 L19 7 Q21 7 21 9 L20 24 Q20 26 18 26 L6 26 Q4 26 4 24 L3 9 Q3 7 5 7 Z" fill="#FF1E1E" />
+
+      {/* Body side detail */}
+      <path d="M5.5 10 L18.5 10" stroke="rgba(255,255,255,0.08)" strokeWidth="0.4" />
+      <path d="M5.5 18 L18.5 18" stroke="rgba(255,255,255,0.05)" strokeWidth="0.3" />
+
+      {/* Sidepods */}
+      <rect x="4" y="14" width="16" height="5" rx="1.5" fill="#cc1818" />
+      <rect x="4.5" y="14.5" width="15" height="1" fill="rgba(255,255,255,0.06)" />
+
+      {/* Air intake */}
+      <rect x="9" y="6" width="6" height="2" rx="1" fill="#111" />
+      <rect x="10" y="6.3" width="4" height="1.4" rx="0.5" fill="#0a0a0a" />
+
+      {/* Cockpit */}
+      <path d="M7 9 L17 9 Q18 9 18 10 L17 15 Q17 16 16 16 L8 16 Q7 16 7 15 L6 10 Q6 9 7 9 Z" fill="#0D0D0D" />
+
+      {/* Steering wheel */}
+      <circle cx="12" cy="11" r="2" fill="none" stroke="#444" strokeWidth="0.6" />
+      <circle cx="12" cy="11" r="0.6" fill="#666" />
+
+      {/* Driver helmet */}
+      <ellipse cx="12" cy="10.5" rx="3" ry="2.8" fill="#fff" opacity="0.9" />
+      <ellipse cx="12" cy="10.5" rx="2.5" ry="2.3" fill="#f0f0f0" />
+      {/* Visor */}
+      <path d="M9.5 9.5 Q12 8.5 14.5 9.5" stroke="#1a1a1a" strokeWidth="1" fill="#222" opacity="0.8" />
+      <path d="M9.8 9.7 Q12 8.8 14.2 9.7" stroke="#333" strokeWidth="0.4" fill="none" />
+      {/* Helmet stripe */}
+      <path d="M12 7.5 L12 13" stroke="#FF1E1E" strokeWidth="0.6" />
+      <path d="M10.5 8 L13.5 8" stroke="#FF1E1E" strokeWidth="0.3" />
+
+      {/* Front nose */}
+      <path d="M7 26 L17 26 L15 30 L9 30 Z" fill="#FF1E1E" />
+      <path d="M8 26.5 L16 26.5 L14.5 29.5 L9.5 29.5 Z" fill="#cc1818" />
+
+      {/* Front wing */}
+      <rect x="3" y="29" width="18" height="2.5" rx="0.8" fill="#222" />
+      <rect x="5" y="31.5" width="14" height="2" rx="0.5" fill="#FF1E1E" />
+      {/* Front wing flaps */}
+      <rect x="3.5" y="29" width="1" height="4" fill="#FF1E1E" opacity="0.7" />
+      <rect x="19.5" y="29" width="1" height="4" fill="#FF1E1E" opacity="0.7" />
+      <rect x="5" y="29.3" width="14" height="0.3" fill="rgba(255,255,255,0.1)" />
+
+      {/* Rear wheels */}
+      <g transform={`translate(12, 21) rotate(${wheelSpin})`}>
+        <circle cx="-9" cy="0" r="3.5" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
+        <circle cx="-9" cy="0" r="2" fill="#111" />
+        <circle cx="-9" cy="0" r="0.8" fill="#444" />
+        <circle cx="9" cy="0" r="3.5" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
+        <circle cx="9" cy="0" r="2" fill="#111" />
+        <circle cx="9" cy="0" r="0.8" fill="#444" />
       </g>
-      <g transform={`translate(10, 26) rotate(${wheelY})`}>
-        <rect x="-8" y="-1" width="3" height="5" rx="0.8" fill="#111" />
-        <rect x="5" y="-1" width="3" height="5" rx="0.8" fill="#111" />
+
+      {/* Front wheels */}
+      <g transform={`translate(12, 28) rotate(${wheelSpin})`}>
+        <circle cx="-9" cy="0" r="3" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
+        <circle cx="-9" cy="0" r="1.8" fill="#111" />
+        <circle cx="-9" cy="0" r="0.7" fill="#444" />
+        <circle cx="9" cy="0" r="3" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
+        <circle cx="9" cy="0" r="1.8" fill="#111" />
+        <circle cx="9" cy="0" r="0.7" fill="#444" />
       </g>
-      <rect x="3" y="14" width="14" height="1" fill="rgba(255,255,255,0.05)" />
+
+      {/* Exhaust pipes */}
+      <rect x="4" y="22" width="1.5" height="3" rx="0.5" fill="#444" />
+      <rect x="4.2" y="22" width="1" height="2.5" rx="0.3" fill="#333" />
+
+      {/* Exhaust flame */}
       <motion.ellipse
-        cx="10" cy="28"
-        rx="2.5"
+        cx="4.75" cy="26"
+        rx="1.5"
         fill="#FF1E1E"
-        initial={{ ry: 2, opacity: 0.15 }}
-        animate={{ opacity: [0.15, 0.5, 0.15], ry: [2, 3, 2] }}
-        transition={{ duration: 0.15, repeat: Infinity }}
+        initial={{ ry: 1.5, opacity: 0.2 }}
+        animate={{ opacity: [0.2, 0.6, 0.2], ry: [1.5, 2.5, 1.5] }}
+        transition={{ duration: 0.12, repeat: Infinity }}
       />
-      <text x="10" y="17" textAnchor="middle" fill="white" fontSize="3.5" fontWeight="bold" fontFamily="Rajdhani">07</text>
+      <motion.ellipse
+        cx="4.75" cy="26.5"
+        rx="0.8"
+        fill="#FFaa00"
+        initial={{ ry: 1, opacity: 0.3 }}
+        animate={{ opacity: [0.3, 0.7, 0.3], ry: [1, 1.8, 1] }}
+        transition={{ duration: 0.1, repeat: Infinity, delay: 0.05 }}
+      />
+
+      {/* Number */}
+      <text x="12" y="20" textAnchor="middle" fill="white" fontSize="4" fontWeight="bold" fontFamily="Rajdhani" opacity="0.7">07</text>
+
+      {/* Front headlights (small LED dots) */}
+      <circle cx="8" cy="29.5" r="0.5" fill="#FFaa00" opacity="0.6" />
+      <circle cx="16" cy="29.5" r="0.5" fill="#FFaa00" opacity="0.6" />
     </svg>
   );
 }
@@ -68,8 +143,8 @@ export default function RacingTrack() {
   if (!mounted) return null;
 
   return (
-    <div ref={trackRef} className="fixed left-0 top-0 bottom-0 w-8 md:w-10 z-30 pointer-events-none">
-      {/* Simple white lane — very low opacity */}
+    <div ref={trackRef} className="fixed left-0 top-0 bottom-0 w-10 md:w-12 z-30 pointer-events-none">
+      {/* Simple white lane */}
       <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-white/[0.04]" />
 
       {/* Go Kart */}
@@ -81,22 +156,23 @@ export default function RacingTrack() {
           style={{ rotate: scrollVelocity > 2 ? (scrollVelocity > 4 ? 1.5 : 0.8) : 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
         >
-          <VerticalKart speed={scrollVelocity} />
+          <GoKart speed={scrollVelocity} />
         </motion.div>
+        {/* Exhaust smoke */}
         {scrollVelocity > 1 && (
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 pointer-events-none">
-            {[...Array(2)].map((_, i) => (
+          <div className="absolute -bottom-5 left-1 -translate-x-1/2 pointer-events-none">
+            {[...Array(3)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute rounded-full bg-white/10"
+                className="absolute rounded-full bg-white/8"
                 style={{ width: 2 + i, height: 2 + i }}
                 animate={{
-                  y: [0, 5 + i * 3],
-                  x: [-0.5 + Math.random(), -1 + Math.random() * 2],
-                  opacity: [0.15, 0],
-                  scale: [0.5, 1.5],
+                  y: [0, 6 + i * 3],
+                  x: [-1 + Math.random() * 2, -2 + Math.random() * 4],
+                  opacity: [0.12, 0],
+                  scale: [0.5, 2],
                 }}
-                transition={{ duration: 0.5, delay: i * 0.08, repeat: Infinity }}
+                transition={{ duration: 0.4, delay: i * 0.06, repeat: Infinity }}
               />
             ))}
           </div>
